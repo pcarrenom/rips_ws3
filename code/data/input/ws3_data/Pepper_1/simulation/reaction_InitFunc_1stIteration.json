@@ -1,0 +1,312 @@
+{
+  "name": "InitFunc",
+  "activate": "",
+  "bt": {
+    "node": "sequence",
+    "state": "idle",
+    "times": 0,
+    "children": [
+      {
+        "node": "action",
+        "primitives": {
+          "primitive": "say",
+          "input": "Hi I am Pepper, welcome to the Clayton Campus center!",
+          "options": {
+            "contextual": true,
+            "pitch": 50,
+            "velocity": 50
+          }
+        },
+        "robots": "Pepper",
+        "state": "idle",
+        "times": 0,
+        "id": "acti20200831131638-1018"
+      },
+      {
+        "node": "action",
+        "primitives": {
+          "primitive": "animation",
+          "input": "wave",
+          "options": {
+            "flip": false,
+            "reverse": false,
+            "time": "2"
+          }
+        },
+        "robots": "Pepper",
+        "state": "idle",
+        "times": 0,
+        "id": "acti20200831131638-1019"
+      },
+      {
+        "node": "action",
+        "primitives": {
+          "primitive": "say",
+          "input": "Let me show you around",
+          "options": {
+            "contextual": false,
+            "pitch": 50,
+            "velocity": 50
+          }
+        },
+        "robots": "Pepper",
+        "state": "idle",
+        "times": 0,
+        "id": "acti20200831131638-1020"
+      },
+      {
+        "node": "action",
+        "primitives": {
+          "primitive": "walk",
+          "input": "forwards",
+          "options": {
+            "meters": "1"
+          }
+        },
+        "robots": "Pepper",
+        "state": "idle",
+        "times": 0,
+        "id": "acti20200831131638-1021"
+      },
+      {
+        "node": "action",
+        "primitives": {
+          "primitive": "turn",
+          "input": "right",
+          "options": {
+            "degrees": "45"
+          }
+        },
+        "robots": "Pepper",
+        "state": "idle",
+        "times": 0,
+        "id": "acti20200831131638-1022"
+      },
+      {
+        "node": "action",
+        "primitives": {
+          "primitive": "say",
+          "input": "This is the world point, where all the tasty food is served.",
+          "options": {
+            "contextual": false,
+            "pitch": 50,
+            "velocity": 50
+          }
+        },
+        "robots": "Pepper",
+        "state": "idle",
+        "times": 0,
+        "id": "acti20200831131638-1023"
+      },
+      {
+        "node": "action",
+        "primitives": {
+          "primitive": "walk",
+          "input": "forwards",
+          "options": {
+            "meters": "0.5"
+          }
+        },
+        "robots": "Pepper",
+        "state": "idle",
+        "times": 0,
+        "id": "acti20200831131638-1024"
+      },
+      {
+        "node": "action",
+        "primitives": {
+          "primitive": "turn",
+          "input": "left",
+          "options": {
+            "degrees": "120"
+          }
+        },
+        "robots": "Pepper",
+        "state": "idle",
+        "times": 0,
+        "id": "acti20200831131638-1025"
+      },
+      {
+        "node": "action",
+        "primitives": {
+          "primitive": "say",
+          "input": "This is the clinic. You can make appointments online or walk in. As a student you will have free access to the healthcare services.",
+          "options": {
+            "contextual": false,
+            "pitch": 50,
+            "velocity": 50
+          }
+        },
+        "robots": "Pepper",
+        "state": "idle",
+        "times": 0,
+        "id": "acti20200831131638-1026"
+      },
+      {
+        "node": "action",
+        "primitives": {
+          "primitive": "walk",
+          "input": "backwards",
+          "options": {
+            "meters": "1"
+          }
+        },
+        "robots": "Pepper",
+        "state": "idle",
+        "times": 0,
+        "id": "acti20200831131638-1027"
+      },
+      {
+        "node": "action",
+        "primitives": {
+          "primitive": "turn",
+          "input": "right",
+          "options": {
+            "degrees": "45"
+          }
+        },
+        "robots": "Pepper",
+        "state": "idle",
+        "times": 0,
+        "id": "acti20200831131638-1028"
+      },
+      {
+        "node": "action",
+        "primitives": {
+          "primitive": "say",
+          "input": "Here we are at the student center, where you can get support regarding anything related to your study and life.",
+          "options": {
+            "contextual": false,
+            "pitch": 50,
+            "velocity": 50
+          }
+        },
+        "robots": "Pepper",
+        "state": "idle",
+        "times": 0,
+        "id": "acti20200831131638-1029"
+      },
+      {
+        "node": "sequence",
+        "state": "idle",
+        "times": 0,
+        "children": [
+          {
+            "node": "condition",
+            "primitive": "human_detected",
+            "input": "yes",
+            "state": "idle",
+            "robots": "any",
+            "times": 0,
+            "id": "cond20200831131638-62",
+            "remember": 3,
+            "keep": false
+          },
+          {
+            "node": "sequence",
+            "state": "idle",
+            "times": 0,
+            "children": [
+              {
+                "node": "action",
+                "primitives": {
+                  "primitive": "walk_toward",
+                  "input": "People",
+                  "options": {
+                    "LeftArm": false,
+                    "RightArm": false
+                  }
+                },
+                "robots": "Pepper",
+                "state": "idle",
+                "times": 0,
+                "id": "acti20200831131638-1030"
+              },
+              {
+                "node": "action",
+                "primitives": {
+                  "primitive": "say",
+                  "input": "Here is Leimin, our friendly staff member. Please feel free to chat with her if you have any questions.",
+                  "options": {
+                    "contextual": false,
+                    "pitch": 50,
+                    "velocity": 50
+                  }
+                },
+                "robots": "Pepper",
+                "state": "idle",
+                "times": 0,
+                "id": "acti20200831131638-1031"
+              }
+            ],
+            "id": "sequ20200831131638-188"
+          }
+        ],
+        "id": "sequ20200831131638-189"
+      },
+      {
+        "node": "action",
+        "primitives": {
+          "primitive": "say",
+          "input": "Thanks for being with me today. If you ever see me on campus, please come and chat with me more. I look forward to seeing you again!",
+          "options": {
+            "contextual": false,
+            "pitch": 50,
+            "velocity": 50
+          }
+        },
+        "robots": "Pepper",
+        "state": "idle",
+        "times": 0,
+        "id": "acti20200831131638-1032"
+      },
+      {
+        "node": "action",
+        "primitives": {
+          "primitive": "animation",
+          "input": "wave",
+          "options": {
+            "flip": false,
+            "reverse": false,
+            "time": "2"
+          }
+        },
+        "robots": "Pepper",
+        "state": "idle",
+        "times": 0,
+        "id": "acti20200831131638-1033"
+      },
+      {
+        "node": "action",
+        "primitives": {
+          "primitive": "turn",
+          "input": "right",
+          "options": {
+            "degrees": "180"
+          }
+        },
+        "robots": "Pepper",
+        "state": "idle",
+        "times": 0,
+        "id": "acti20200831131638-1034"
+      },
+      {
+        "node": "action",
+        "primitives": {
+          "primitive": "walk",
+          "input": "forwards",
+          "options": {
+            "meters": "1"
+          }
+        },
+        "robots": "Pepper",
+        "state": "idle",
+        "times": 0,
+        "id": "acti20200831131638-1035"
+      }
+    ],
+    "id": "sequ20200831131638-190"
+  },
+  "utility": 2,
+  "id": "reac20200831131638-40"
+}

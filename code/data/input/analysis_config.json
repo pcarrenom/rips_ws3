@@ -1,0 +1,1181 @@
+{
+	"analysis": [
+		{
+			"group": "Pepper_1",
+			"configurations": [
+				{	
+					"condition": "simulation",
+					"metrics":
+ 					[
+						{
+							"behavior": "TourRobot",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_InitFunc_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["sim_v1"]
+								}
+							]
+						}
+					]
+				},
+				{	
+					"condition": "robot",
+					"metrics": 
+					[
+						{
+							"behavior": "TourRobot",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_InitFunc_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1"]
+								}
+							]
+						},
+						{
+							"behavior": "PassToPerson",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_PassToPerson_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1"]
+								}
+							]
+						}
+					]
+				},
+				{	
+					"condition": "mixed",
+					"metrics": 
+					[
+						{
+							"behavior": "TourRobot",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_InitFunc_1stIteration.json"
+								},
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_InitFunc_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "paired",
+									"apply_to": [["sim_v1", "sim_v1"], ["sim_v1", "robot_v1"]]	
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"group": "Pepper_2",
+			"configurations": [
+				{	
+					"condition": "simulation",
+					"metrics":
+ 					[
+						{
+							"behavior": "StatePurpose",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_StatePurpose_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["sim_v1"]
+								}
+							]
+						},
+						{
+							"behavior": "TablePatrole",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_TablePatrole_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["sim_v1"]
+								}
+							]
+						},
+						{
+							"behavior": "TablePolice",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_TablePolice_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["sim_v1"]
+								}
+							]
+						}
+					]
+				},
+				{	
+					"condition": "robot",
+					"metrics": 
+					[
+						{
+							"behavior": "StatePurpose",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_StatePurpose_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_StatePurpose_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1", "robot_v2"]
+								}
+							]
+						},
+						{
+							"behavior": "TablePatrole",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_TablePatrole_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_TablePatrole_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1", "robot_v2"]
+								}
+							]
+						},
+						{
+							"behavior": "TablePolice",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_TablePolice_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_TablePolice_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1", "robot_v2"]
+								}
+							]
+						}
+					]
+				},
+				{	
+					"condition": "mixed",
+					"metrics": 
+					[
+						{
+							"behavior": "StatePurpose",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_StatePurpose_1stIteration.json"
+								},
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_StatePurpose_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_StatePurpose_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "paired",
+									"apply_to": [["sim_v1", "sim_v1"],["sim_v1", "robot_v1"], ["sim_v1", "robot_v2"]]
+								}
+							]
+						},
+						{
+							"behavior": "TablePatrole",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_TablePatrole_1stIteration.json"
+								},
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_TablePatrole_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_TablePatrole_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "paired",
+									"apply_to": [["sim_v1", "sim_v1"],["sim_v1", "robot_v1"],["sim_v1", "robot_v2"]]
+								}
+							]
+						},
+						{
+							"behavior": "TablePolice",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_TablePolice_1stIteration.json"
+								},
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_TablePolice_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_TablePolice_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "paired",
+									"apply_to": [["sim_v1", "sim_v1"], ["sim_v1", "robot_v1"], ["sim_v1", "robot_v2"]]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"group": "Pepper_3",
+			"configurations": [
+				{	
+					"condition": "simulation",
+					"metrics":
+ 					[
+						{
+							"behavior": "FlyerDistributor",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_FlyerDistributor_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_FlyerDistributor_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["sim_v1", "sim_v2"]
+								}
+							]
+						}
+					]
+				},
+				{	
+					"condition": "robot",
+					"metrics": 
+					[
+						{
+							"behavior": "FlyerDistributor",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_FlyerDistributor_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_FlyerDistributor_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1", "robot_v2"]
+								}
+							]
+						}
+					]
+				},
+				{	
+					"condition": "mixed",
+					"metrics": 
+					[
+						{
+							"behavior": "FlyerDistributor",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_FlyerDistributor_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_FlyerDistributor_2ndIteration.json"
+								},
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_FlyerDistributor_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_FlyerDistributor_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "paired",
+									"apply_to": [["sim_v1", "sim_v1"], ["sim_v1", "sim_v2"],["sim_v1", "robot_v1"], ["sim_v1", "robot_v2"]]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"group": "Pepper_4",
+			"configurations": [
+				{	
+					"condition": "simulation",
+					"metrics":
+ 					[
+						{
+							"behavior": "Tidying",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_Tidying_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_Tidying_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["sim_v1", "sim_v2"]
+								}
+							]
+						},
+						{
+							"behavior": "MonashConnectHelper",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_MonashConnectHelper_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_MonashConnectHelper_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["sim_v1", "sim_v2"]
+								}
+							]
+						}
+					]
+				},
+				{	
+					"condition": "robot",
+					"metrics":
+ 					[
+						{
+							"behavior": "Tidying",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_Tidying_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_Tidying_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1", "robot_v2"]
+								}
+							]
+						},
+						{
+							"behavior": "MonashConnectHelper",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_MonashConnectHelper_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_MonashConnectHelper_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1", "robot_v2"]
+								}
+							]
+						}
+					]
+				},
+				{	
+					"condition": "mixed",
+					"metrics": 
+					[
+						{
+							"behavior": "MonashConnectHelper",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_MonashConnectHelper_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_MonashConnectHelper_2ndIteration.json"
+								},
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_MonashConnectHelper_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_MonashConnectHelper_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "paired",
+									"apply_to": [["sim_v1", "sim_v1"], ["sim_v1", "sim_v2"],["sim_v1", "robot_v1"], ["sim_v1", "robot_v2"]]
+								}
+							]
+						},
+						{
+							"behavior": "Tidying",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_Tidying_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_Tidying_2ndIteration.json"
+								},
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_Tidying_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_Tidying_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "paired",
+									"apply_to": [["sim_v1", "sim_v1"], ["sim_v1", "sim_v2"],["sim_v1", "robot_v1"], ["sim_v1", "robot_v2"]]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"group": "Fetch_1",
+			"configurations": [
+				{	
+					"condition": "simulation",
+					"metrics":
+ 					[
+						{
+							"behavior": "Delivery",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_Delivery_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_Delivery_2ndIteration.json"
+								},
+								{
+									"name": "sim_v3",
+									"file": "simulation/reaction_Delivery_3rdIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["sim_v1", "sim_v2", "sim_v3"]
+								}
+							]
+						},
+						{
+							"behavior": "PresenceBehavior",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_PresenceBehavior_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_PresenceBehavior_2ndIteration.json"
+								},
+								{
+									"name": "sim_v3",
+									"file": "simulation/reaction_PresenceBehavior_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["sim_v1", "sim_v2", "sim_v3"]
+								}
+							]
+						}
+					]
+				},
+				{	
+					"condition": "robot",
+					"metrics":
+ 					[
+						{
+							"behavior": "Delivery",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_Delivery_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_Delivery_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1", "robot_v2"]
+								}
+							]
+						},
+						{
+							"behavior": "PresenceBehavior",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_PresenceBehavior_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_PresenceBehavior_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1", "robot_v2"]
+								}
+							]
+						}
+					]
+				},
+				{	
+					"condition": "mixed",
+					"metrics": 
+					[
+						{
+							"behavior": "Delivery",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_Delivery_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_Delivery_2ndIteration.json"
+								},
+								{
+									"name": "sim_v3",
+									"file": "simulation/reaction_Delivery_3rdIteration.json"
+								},
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_Delivery_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_Delivery_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "paired",
+									"apply_to": [["sim_v1", "sim_v1"], ["sim_v1", "sim_v2"], ["sim_v1", "sim_v3"], ["sim_v1", "robot_v1"], ["sim_v1", "robot_v2"]]
+								}
+							]
+						},
+						{
+							"behavior": "PresenceBehavior",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_PresenceBehavior_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_PresenceBehavior_2ndIteration.json"
+								},
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_PresenceBehavior_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_PresenceBehavior_2ndIteration.json"
+								},
+								{
+									"name": "sim_v3",
+									"file": "simulation/reaction_PresenceBehavior_2ndIteration.json"
+								}
+
+
+							],
+							"compute": [
+								{
+									"type": "paired",
+									"apply_to": [["sim_v1", "sim_v1"], ["sim_v1", "sim_v2"], ["sim_v1", "sim_v3"], ["sim_v1", "robot_v1"], ["sim_v1", "robot_v2"]]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"group": "Fetch_2",
+			"configurations": [
+				{	
+					"condition": "simulation",
+					"metrics":
+ 					[
+						{
+							"behavior": "Cleaning",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_Cleaning_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_Cleaning_2ndIteration.json"
+								},
+								{
+									"name": "sim_v3",
+									"file": "simulation/reaction_Cleaning_3rdIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["sim_v1", "sim_v2", "sim_v3"]
+								}
+							]
+						},
+						{
+							"behavior": "DeliveryAndClean",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_DeliveryAndClean_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_DeliveryAndClean_2ndIteration.json"
+								},
+								{
+									"name": "sim_v3",
+									"file": "simulation/reaction_DeliveryAndClean_3rdIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["sim_v1", "sim_v2", "sim_v3"]
+								}
+							]
+						}
+					]
+				},
+				{	
+					"condition": "robot",
+					"metrics":
+ 					[
+						{
+							"behavior": "Cleaning",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_Cleaning_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1"]
+								}
+							]
+						},
+						{
+							"behavior": "CleaningPerson",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_CleaningPerson_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1"]
+								}
+							]
+						},
+						{
+							"behavior": "DeliveryAndClean",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_DeliveryAndClean_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1"]
+								}
+							]
+						}
+					]
+				},
+				{	
+					"condition": "mixed",
+					"metrics": 
+					[
+						{
+							"behavior": "Cleaning",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_Cleaning_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_Cleaning_2ndIteration.json"
+								},
+								{
+									"name": "sim_v3",
+									"file": "simulation/reaction_Cleaning_3rdIteration.json"
+								},
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_Cleaning_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "paired",
+									"apply_to": [["sim_v1", "sim_v1"], ["sim_v1", "sim_v2"], ["sim_v1", "sim_v3"], ["sim_v1", "robot_v1"]]
+								}
+							]
+						},
+						{
+							"behavior": "DeliveryAndClean",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_DeliveryAndClean_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_DeliveryAndClean_2ndIteration.json"
+								},
+								{
+									"name": "sim_v3",
+									"file": "simulation/reaction_DeliveryAndClean_3rdIteration.json"
+								},
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_DeliveryAndClean_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "paired",
+									"apply_to": [["sim_v1", "sim_v1"], ["sim_v1", "sim_v2"], ["sim_v1", "sim_v3"], ["sim_v1", "robot_v1"]]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"group": "Fetch_3",
+			"configurations": [
+				{	
+					"condition": "simulation",
+					"metrics":
+ 					[
+						{
+							"behavior": "Cleaning",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_Cleaning_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_Cleaning_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["sim_v1", "sim_v2"]
+								}
+							]
+						},
+						{
+							"behavior": "Information",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_Information_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_Information_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["sim_v1", "sim_v2"]
+								}
+							]
+						}
+					]
+				},
+				{	
+					"condition": "robot",
+					"metrics":
+ 					 					[
+						{
+							"behavior": "Cleaning",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_Cleaning_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_Cleaning_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1", "robot_v2"]
+								}
+							]
+						},
+						{
+							"behavior": "Information",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_Information_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_Information_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1", "robot_v2"]
+								}								
+							]
+						}
+					]
+				},
+				{	
+					"condition": "mixed",
+					"metrics": 
+					[
+						{
+							"behavior": "Cleaning",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_Cleaning_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_Cleaning_2ndIteration.json"
+								},
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_Cleaning_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_Cleaning_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "paired",
+									"apply_to": [["sim_v1", "sim_v1"], ["sim_v1", "sim_v2"], ["sim_v1", "robot_v1"], ["sim_v1", "robot_v2"]]
+								}
+							]
+						},
+						{
+							"behavior": "Information",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_Information_1stIteration.json"
+								},
+								{
+									"name": "sim_v2",
+									"file": "simulation/reaction_Information_2ndIteration.json"
+								},
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_Information_1stIteration.json"
+								},
+								{
+									"name": "robot_v2",
+									"file": "robot/reaction_Information_2ndIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "paired",
+									"apply_to": [["sim_v1", "sim_v1"], ["sim_v1", "sim_v2"], ["sim_v1", "robot_v1"], ["sim_v1", "robot_v2"]]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"group": "Fetch_4",
+			"configurations": [
+				{	
+					"condition": "simulation",
+					"metrics":
+ 					[
+						{
+							"behavior": "WheelChair",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_WheelChair_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["sim_v1"]
+								}
+							]
+						}
+					]
+				},
+				{	
+					"condition": "robot",
+					"metrics":
+ 					[
+						{
+							"behavior": "Delivery",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_Delivery_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1"]
+								}
+							]
+						},
+						{
+							"behavior": "HoldDoor",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_HoldDoor_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1"]
+								}
+							]
+						},
+						{
+							"behavior": "LocationTour",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_LocationTour_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1"]
+								}
+							]
+						},
+						{
+							"behavior": "WheelChair",
+							"data": [
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_WheelChair_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "single",
+									"apply_to": ["robot_v1"]
+								}
+							]
+						}
+					]
+				},
+				{	
+					"condition": "mixed",
+					"metrics": 
+					[
+						{
+							"behavior": "WheelChair",
+							"data": [
+								{
+									"name": "sim_v1",
+									"file": "simulation/reaction_WheelChair_1stIteration.json"
+								},
+								{
+									"name": "robot_v1",
+									"file": "robot/reaction_WheelChair_1stIteration.json"
+								}
+
+							],
+							"compute": [
+								{
+									"type": "paired",
+									"apply_to": [["sim_v1", "sim_v1"], ["sim_v1", "robot_v1"]]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
