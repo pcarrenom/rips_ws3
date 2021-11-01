@@ -1,7 +1,5 @@
 # Scripts used to generate results presented in the SciRob submission entitled "A Participatory Design Methodology for Building Shared Understanding Between Users and Designers in HRI"
 
-Set of classes and scripts used to compute custom metrics on behaviour trees.
-
 ## Behavior Tree Implemented Metrics
 
 Three metrics are implemented at the moment:
@@ -27,8 +25,7 @@ pip install numpy  pandas matplotlib seaborn anytree apted
 - configuration file that specifies which metrics to compute for each behavior tree or pair of behavior trees (see analysis_config_revision.json for an example)
 
 ```
-cd src_bt_metrics
-python rips_ws3_analysis.py
+python src_bt_metrics/rips_ws3_analysis.py
 ```
 
  This script stores computed metrics in two binary files. One file for single metrics (complexity and primitive counts) and one file for paired metrics (edt)
@@ -36,8 +33,7 @@ python rips_ws3_analysis.py
 3. Generate plots for each group. Plots are based on binary files generated in the previous step
 
 ```
-cd src_bt_metrics
-python evolution_plots.py
+python src_bt_metricsevolution_plots.py
 ```
 
 ## Sentiment analysis
@@ -45,3 +41,6 @@ Three sentiment classifiers are provided in [src_sentiment](/src_sentiment), nam
 
 ## Causal analysis
 Two causal discovery algorithms are implemented using the Causal Discovery Toolbox in [src_causal](/src_causal), namely GIES and PC. For dependencies of each classifier see the scripts for details.
+
+## Other
+pdf file with list of codes used to annotate transcripts is also included in [codes](data/Unified%20Annotation%20Scheme.pdf)
